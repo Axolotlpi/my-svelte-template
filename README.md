@@ -2,9 +2,13 @@
 
 This is a svelte template modified to my preferences.
 
-# This branch - PostCSS
+# This branch - Main
 
-This is the general css organization for most of my projects.
+This just has the general organization for most of my projects.
+The directory structure is slightly modified as well as the css.
+
+**The CSS**
+The CSS is organized to allow scoped compoenent styles and other css files to work together.
 main.js will import/aggregate the css files which are applied to all components, and postcss-import
 will create the postcss.css file with the main.js's order + the components' scoped styles appended.
 
