@@ -5,8 +5,15 @@ This is a svelte template modified to my preferences.
 # This branch - PostCSS
 
 This is the general css organization for most of my projects.
-main.js imports/aggregates the css files which are applied to all components, and postcss import
+main.js will import/aggregate the css files which are applied to all components, and postcss-import
 will create the postcss.css file with the main.js's order + the components' scoped styles appended.
+
+So:
+**src/css/global.css** is imported in **src/main.js** 
+and custom styles are inside components **style** tags
+**PostCSS** will append them in order and generate **public/build/postcss.css**
+
+This also leaves room for more PostCSS plugins
 
 
 # The Default Svelte information

@@ -8,7 +8,7 @@ import autoprefixer from 'autoprefixer';
 import postcssimport from 'postcss-import';
 
 const production = !process.env.ROLLUP_WATCH;
-import path from 'path';
+
 
 function serve() {
 	let server;
