@@ -3,9 +3,12 @@ import commonjs from '@rollup/plugin-commonjs';
 import resolve from '@rollup/plugin-node-resolve';
 import livereload from 'rollup-plugin-livereload';
 import { terser } from 'rollup-plugin-terser';
-import css from 'rollup-plugin-css-only';
+import postcss from 'rollup-plugin-postcss';
+import autoprefixer from 'autoprefixer';
+import postcssimport from 'postcss-import';
 
 const production = !process.env.ROLLUP_WATCH;
+
 
 function serve() {
 	let server;
@@ -43,9 +46,16 @@ export default {
 				dev: !production
 			}
 		}),
-		// we'll extract any component CSS out into
-		// a separate file - better for performance
-		css({ output: 'bundle.css' }),
+		//postcss import will take imported css (only need to import once, in main.js) and component <style>s and create one long postcss.css file
+		postcss({
+			extract: 'postcss.css',
+			plugins:[
+				postcssimport({
+					path: '/src/css/',
+				}),
+				autoprefixer()
+			]
+		}),
 
 		// If you have external dependencies installed from
 		// npm, you'll most likely need these plugins. In

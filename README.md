@@ -1,3 +1,23 @@
+# My Template
+
+This is a svelte template modified to my preferences.
+
+# This branch - PostCSS
+
+This is the general css organization for most of my projects.
+main.js will import/aggregate the css files which are applied to all components, and postcss-import
+will create the postcss.css file with the main.js's order + the components' scoped styles appended.
+
+So:
+**src/css/global.css** is imported in **src/main.js** 
+and custom styles are inside components **style** tags
+**PostCSS** will append them in order and generate **public/build/postcss.css**
+
+This also leaves room for more PostCSS plugins
+
+
+# The Default Svelte information
+
 *Looking for a shareable component template? Go here --> [sveltejs/component-template](https://github.com/sveltejs/component-template)*
 
 ---
@@ -70,36 +90,4 @@ Or remove the script via:
 
 ```bash
 rm scripts/setupTypeScript.js
-```
-
-## Deploying to the web
-
-### With [Vercel](https://vercel.com)
-
-Install `vercel` if you haven't already:
-
-```bash
-npm install -g vercel
-```
-
-Then, from within your project folder:
-
-```bash
-cd public
-vercel deploy --name my-project
-```
-
-### With [surge](https://surge.sh/)
-
-Install `surge` if you haven't already:
-
-```bash
-npm install -g surge
-```
-
-Then, from within your project folder:
-
-```bash
-npm run build
-surge public my-project.surge.sh
 ```
