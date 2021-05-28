@@ -2,9 +2,9 @@
 
 This is a svelte template modified to my preferences.
 
-# This branch - Main
+# This branch - Main + single-page-app
 
-This just has the general organization for most of my projects.
+This is reorganized, and has simple routing for a spa. 
 The directory structure is slightly modified as well as the css.
 
 **The CSS**

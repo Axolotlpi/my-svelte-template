@@ -1,10 +1,15 @@
 <script>
 	export let name;
+	import Router from '../routes.svelte';
+	import { Link } from 'svelte-routing'; //https://github.com/EmilTholin/svelte-routing for info on routing
+	
 </script>
 
 <main>
 	<h1>Hello {name}!</h1>
 	<p>Visit the <a href="https://svelte.dev/tutorial">Svelte tutorial</a> to learn how to build Svelte apps.</p>
+
+	<Router/>
 </main>
 
 <style>
