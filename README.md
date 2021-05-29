@@ -2,8 +2,11 @@
 
 This is a svelte template modified to my preferences.
 
-# This branch - Main + single-page-app
+# This branch - Single page app, webpack version
 
+This branch has as close to the same function's as the Rollup single page app branch, but with webpack.
+
+**Single page app**:
 This is reorganized, and has simple routing for a spa. 
 The directory structure is slightly modified as well as the css.
 
