@@ -15,8 +15,8 @@ module.exports = {
 	},
 	output: {
 		path: path.join(__dirname, 'public/build'),
-		filename: '[name].js',
-		chunkFilename: '[name].[id].js'
+		filename: 'bundle.js',
+		chunkFilename: 'bundle.[id].js'
 	},
 	module: {
 		rules: [
@@ -55,7 +55,7 @@ module.exports = {
 	mode,
 	plugins: [
 		new MiniCssExtractPlugin({
-            filename: "[name].css",		
+            filename: "bundle.css",		
         })
 	],
 	devtool: prod ? false : 'source-map',
