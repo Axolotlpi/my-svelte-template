@@ -5,7 +5,9 @@ const mode = process.env.NODE_ENV || 'development';
 const prod = mode === 'production';
 
 module.exports = {
-    entry: './src/main.js',
+	entry: {
+		'bundle': ['./src/main.js']
+	},
 	resolve: {
 		alias: {
 			svelte: path.dirname(require.resolve('svelte/package.json'))
@@ -15,8 +17,8 @@ module.exports = {
 	},
 	output: {
 		path: path.join(__dirname, 'public/build'),
-		filename: 'bundle.js',
-		chunkFilename: 'bundle.[id].js'
+		filename: '[name].js',
+		chunkFilename: '[name].[id].js'
 	},
 	module: {
 		rules: [
@@ -55,7 +57,7 @@ module.exports = {
 	mode,
 	plugins: [
 		new MiniCssExtractPlugin({
-            filename: "bundle.css",		
+            filename: '[name].css',		
         })
 	],
 	devtool: prod ? false : 'source-map',
